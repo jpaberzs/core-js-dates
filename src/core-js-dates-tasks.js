@@ -223,14 +223,14 @@ function getWeekNumberByDate(date) {
  */
 function getNextFridayThe13th(date) {
   const nextFriday = new Date(date.getUTCFullYear(), date.getUTCMonth(), 13);
-  while (nextFriday.getUTCDay() !== 5) {
+  while (nextFriday.getDay() !== 5) {
     if (nextFriday.getUTCDate() > 13 && nextFriday.getUTCMonth() === 11) {
       nextFriday.setFullYear(nextFriday.getUTCFullYear() + 1);
       nextFriday.setMonth(0);
     } else {
       nextFriday.setMonth(nextFriday.getUTCMonth() + 1);
     }
-    nextFriday.setUTCDate(13);
+    nextFriday.setDate(13);
   }
   return nextFriday;
 }
